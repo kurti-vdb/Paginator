@@ -19,16 +19,23 @@ Php paginator-class to manage collections.
 	$result = mysql_query($query, $connection);
 	$r = mysql_fetch_row($result);
 	
+	//Get current page from url
+	if (isset ($_GET['page']))
+		$page = (int)$_GET['page'];
+	else $page = 1;
+	
 	//Create Paginator-object and fill it
 	$pages = new Paginator;
-	$pages->items_per_page=8;
-	$pages->items_total = $r[0];
-	$pages->mid_range = 3;
-	$pages->paginate();
-	echo $pages->display_pages();
+	$pages->setItemsPerPage=8;
+	$pages->setMaxItems($r[0]);
+	$pages->setMidRange = 3;
+	$pages->setCurrentpage($page);
+	
+	//Print navigator to screen
+	echo $pages->showPaginationMenu();
 	
 	//Load data
-	$query = "SELECT * FROM table_name ORDER BY column_name ASC $pages->limit";
+	$query = "SELECT * FROM table_name ORDER BY column_name DESC LIMIT " . $pages->getStartingIndex() . ", " . $pages->getItemsPerPage() . "";
 	$result = mysql_query($query, $connection);
 	$result = mysql_query($query);
 	
@@ -43,6 +50,16 @@ Php paginator-class to manage collections.
 
 ```
 	
+	private $currentPage;
+		private $itemsPerPage;
+		private $maxItems;
+		private $maxPages;
+		private $startingIndex; //indexnummer 
+		private $endingIndex; //indexnummer
+		private $midRange; // <<previous 1 ... midrange(aantal buttons) ... 99 next>>
+		private $lowPage; // = 4	<<previous 1...45678...99 next>>	
+		private $highPage;// = 8	<<previous 1...45678...99 next>>	
+		private $navigationMenuContainer;
 	
 ###Gives you something like
 
