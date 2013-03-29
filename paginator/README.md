@@ -31,7 +31,7 @@ Php paginator-class to manage collections.
 	$pages->setMidRange = 3;
 	$pages->setCurrentpage($page);
 	
-	//Print navigator to screen
+	//Print paginator to screen
 	echo $pages->showPaginationMenu();
 	
 	//Load data
