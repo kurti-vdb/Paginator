@@ -43,3 +43,10 @@ Php paginator-class to manage collections.
 
 ```
 	
+	
+###Gives you something like
+
+```
+
+		<< previous 1...678...44 next>>
+```
