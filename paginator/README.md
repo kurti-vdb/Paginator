@@ -10,7 +10,7 @@ Php paginator-class to manage collections.
 	//Load our paginator-class
 	require_once("paginator.class.php");
 	
-	//Make a database connection
+	//Make some database connection, in this case MySQL
 	$connection = mysql_connect('url','password','');
 	$database = mysql_select_db('Database_name',$connection);
 	
@@ -50,16 +50,6 @@ Php paginator-class to manage collections.
 
 ```
 	
-	private $currentPage;
-		private $itemsPerPage;
-		private $maxItems;
-		private $maxPages;
-		private $startingIndex; //indexnummer 
-		private $endingIndex; //indexnummer
-		private $midRange; // <<previous 1 ... midrange(aantal buttons) ... 99 next>>
-		private $lowPage; // = 4	<<previous 1...45678...99 next>>	
-		private $highPage;// = 8	<<previous 1...45678...99 next>>	
-		private $navigationMenuContainer;
 	
 ###Gives you something like
 
