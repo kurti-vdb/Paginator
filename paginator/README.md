@@ -48,5 +48,16 @@ Php paginator-class to manage collections.
 
 ```
 
-		<< previous 1...678...44 next>>
+		<< previous 1...678...13 next >>
+		
+				itemName 1
+				itemName 2
+				itemName 3
+				itemName 4
+				itemName 5
+				itemName 6
+				itemName 7
+				itemName 8
+				
+				
 ```
