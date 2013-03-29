@@ -68,3 +68,7 @@ Php paginator-class to manage collections.
 				
 				
 ```
+
+###Demo
+
+You can find this paginator class in action on <a href="http://www.cocktailplanet.org">www.cocktailplanet.org</a> You can even style your paginator with some css.
